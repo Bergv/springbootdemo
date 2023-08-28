@@ -7,6 +7,8 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface StudentRepository extends JpaRepository<Student, String> {
+
+    // https://blog.csdn.net/JAVA_KX/article/details/130696773
     //方法名称必须要遵循驼峰式命名规则，findBy（关键字）+属性名称（首字母大写）+查询条件（首字母大写）
     List<Student> findByNameLike(String name);
 
