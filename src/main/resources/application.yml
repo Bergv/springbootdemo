@@ -15,6 +15,12 @@ spring:
     url: jdbc:firebirdsql://localhost:3050/D:\DB\FireBird\FB.FDB?charSet=UTF-8
     username: root
     password: root
+
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 #    hikari:
 #      driver-class-name: org.firebirdsql.ds.FBSimpleDataSource #org.h2.jdbcx.JdbcDataSource
 mybatis:
@@ -23,7 +29,6 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     map-underscore-to-camel-case: true
-
 
 
 

@@ -1,5 +1,7 @@
 package com.botech.controler;
 
+import com.botech.dao.StudentRepository;
+import com.botech.entity.Student;
 import com.botech.entity.User;
 import com.botech.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,9 @@ public class TestControler {
 
     @Autowired
     UserMapper userMapper;
+
+    @Autowired
+    StudentRepository studentRepository;
 
     @RequestMapping("/hello")
     public String hello() {
@@ -32,6 +37,16 @@ public class TestControler {
         System.out.println(users);
 
         return users;
+    }
+
+    @RequestMapping("/sutdent")
+    public List<Student> sutdent() {
+
+        List<Student> students = studentRepository.findAll();
+        List<Student> students2 = studentRepository.searchStudents("xxx");
+        System.out.println(students2);
+
+        return students2;
     }
 }
 
